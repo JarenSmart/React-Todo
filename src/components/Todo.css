@@ -19,7 +19,12 @@ body {
     margin-left: 50px;
 }
 
+p {
+    font-size: 25px;
+}
+
 h2 {
+    font-size: 3rem;
     background: -webkit-linear-gradient(45deg, #c97874 10%, #463042 90%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
