@@ -21,7 +21,7 @@ const todos = [
     completed: false,
   },
   {
-    task: "Practice react some more...",
+    task: "Practice React some more...",
     id: 4,
     completed: false,
   },
@@ -80,7 +80,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="header">
-          <h2>Welcome to your Todo App!</h2>
+          <h2>What do you need to do today?</h2>
           <TodoForm addTodo={this.addTodo} />
         </div>
         <TodoList
