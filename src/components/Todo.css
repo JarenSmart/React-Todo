@@ -8,15 +8,15 @@ html {
 }
 
 body {
-    font: 300 18px/1.6 "Source Sans Pro", sans-serif;
-    margin: 0;
-    padding: 5em 0 2em;
+    font: 20px "Source Sans Pro", sans-serif;
     text-align: center;
 }
 
 .todo.completed {
-    background-color: #261226;
+    background-color: transparent;
     text-decoration: line-through;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 
 h2 {
@@ -28,38 +28,89 @@ h2 {
     margin: 3em auto;
 }
 
+form {
+    width: 380px;
+    margin: 2em auto;
+    padding: 3em 2em 2em 2em;
+}
+
 .add-todo-box {
     position: relative;
 }
 
-.add-todo-box input {
-    width: 25%;
-    padding: 10px 0;
-    font-size: 16px;
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
     color: #fff;
-    margin-bottom: 30px;
-    margin-right: 83px;
+    width: 100%;
     border: none;
-    border-bottom: 1px solid #fff;
+    border-radius: 0;
+    border-bottom: 2px solid #fff;
+}
+
+input:focus {
     outline: none;
-    background: transparent;
 }
 
-.add-todo-box label {
+label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
     position: absolute;
-    top: 0;
-    left: 0;
-    padding: 10px 195px;
-    font-size: 16px;
-    color: #8c5059;
-    background: transparent;
     pointer-events: none;
-    transition: .5s;
+    left: 5px;
+    top: 10px;
+    transition: all 0.2s ease;
 }
 
-.add-todo-box input:focus~label {
-    top: -20px;
-    left: 0;
+input:focus~label,
+input.used~label {
+    top: -10px;
     color: #6cacc5;
     font-size: 14px;
+}
+
+.add-btn,
+.clear-btn {
+    margin-top: 1.5em;
+    position: relative;
+    background: transparent;
+    font-size: 20px;
+    border: 3px solid #8c5059;
+    line-height: 1;
+    padding: 0.8em 1.5em;
+    color: #8c5059;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    border-radius: 12px;
+}
+
+.add-btn:hover,
+.clear-btn:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.add-btn:hover:before,
+.clear-btn:hover:before {
+    left: 0%;
+    right: auto;
+    width: 100%;
+}
+
+.add-btn:before,
+.clear-btn:before {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: #8c5059;
+    background: #8c5059;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
 }
