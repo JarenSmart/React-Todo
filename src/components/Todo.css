@@ -1,0 +1,121 @@
+html {
+    background: #100a1c;
+    background-image:
+        radial-gradient(50% 30% ellipse at center top, #201e40 0%, rgba(0, 0, 0, 0) 100%),
+        radial-gradient(60% 50% ellipse at center bottom, #261226 0%, #100a1c 100%);
+    background-attachment: fixed;
+    color: #6cacc5;
+}
+
+body {
+    font: 20px "Source Sans Pro", sans-serif;
+    text-align: center;
+}
+
+.todo.completed {
+    background-color: transparent;
+    text-decoration: line-through;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+p {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 3rem;
+    background: -webkit-linear-gradient(45deg, #c97874 10%, #463042 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #8c5059;
+    font-weight: 700;
+    margin: 3em auto;
+}
+
+form {
+    width: 380px;
+    margin: 2em auto;
+    padding: 3em 2em 2em 2em;
+}
+
+.add-todo-box {
+    position: relative;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    -webkit-appearance: none;
+    display: block;
+    background: transparent;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 2px solid #fff;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all 0.2s ease;
+}
+
+input:focus~label,
+input.used~label {
+    top: -10px;
+    color: #6cacc5;
+    font-size: 14px;
+}
+
+.add-btn,
+.clear-btn {
+    margin-top: 1.5em;
+    position: relative;
+    background: transparent;
+    font-size: 20px;
+    border: 3px solid #8c5059;
+    line-height: 1;
+    padding: 0.8em 1.5em;
+    color: #8c5059;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    border-radius: 12px;
+}
+
+.add-btn:hover,
+.clear-btn:hover {
+    color: #fff;
+    background-color: transparent;
+}
+
+.add-btn:hover:before,
+.clear-btn:hover:before {
+    left: 0%;
+    right: auto;
+    width: 100%;
+}
+
+.add-btn:before,
+.clear-btn:before {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: #8c5059;
+    background: #8c5059;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+}
